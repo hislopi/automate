@@ -1,0 +1,85 @@
+.feature {
+  position: relative;
+
+  &.darkBG {
+    background: #F5F5F5;
+  }
+}
+
+.featureGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  @media (min-width: $screen-md) {
+
+  }
+
+  .asset {
+    order: 1;
+
+    > img {
+      max-width: 100%;
+    }
+  }
+
+  .content {
+    order: 2;
+    display: flex;
+    align-items: center;
+  }
+
+  @media (min-width: $screen-md) {
+    flex-direction: row;
+    gap: 62px;
+
+    .asset, .content{
+      width: 50%;
+    }
+
+    &.isRight {
+      .asset {
+        order: 2;
+      }
+
+      .content {
+        order: 1;
+      }
+    }
+  }
+}
+
+
+.slider {
+  display: flex;
+  align-items: center;
+
+  .swiperPrev, .swiperNext {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    &[class*='disabled']{
+      display: none;
+    }
+  }
+
+  .slide{
+    padding: 0 25px;
+    position: relative;
+
+    .title{
+      position: absolute;
+      bottom: 15px;
+      left: 40px;
+      z-index: 2;
+      text-shadow: 1px 1px 7px rgba(0, 0, 0, .5);
+    }
+  }
+
+  .swiperPrev {
+    left: 0;
+  }
+  .swiperNext {
+    right: 0;
+  }
+}

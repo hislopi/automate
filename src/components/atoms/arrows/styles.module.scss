@@ -1,0 +1,11 @@
+.arrow{
+  width: 39px;
+  height: 38px;
+  background: var(--color-brand-black);
+  color: var(--color-brand-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  cursor: pointer;
+}

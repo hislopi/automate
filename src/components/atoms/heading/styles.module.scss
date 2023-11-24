@@ -1,0 +1,127 @@
+.heading {
+  width: auto;
+  height: auto;
+  margin: 0;
+}
+
+//colors
+.colorBase {
+  color: inherit;
+}
+
+.colorGreen {
+  color: var(--color-brand-green);
+}
+
+.colorBlack {
+  color: var(--color-brand-black);
+}
+
+.colorWhite {
+  color: var(--color-brand-white);
+}
+
+.colorDarkGrey {
+  color: var(--color-brand-dark-grey);
+}
+
+.colorGrey {
+  color: var(--color-brand-grey);
+}
+
+//variations
+.variantH1 {
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 38px;
+
+  @media (min-width: $screen-md) {
+    font-size: 50px;
+    line-height: 59px;
+  }
+}
+
+.variantH2 {
+  font-weight: 800;
+  font-size: 26px;
+  line-height: 30px;
+
+  @media (min-width: $screen-md) {
+    font-size: 36px;
+    line-height: 50px;
+  }
+}
+
+.variantH3 {
+  font-weight: 800;
+  font-size: 26px;
+  line-height: 30px;
+
+  @media (min-width: $screen-md) {
+    font-size: 36px;
+    line-height: 42px;
+  }
+}
+
+.variantH4 {
+  font-weight: 800;
+  font-size: 26px;
+  line-height: 30px;
+
+  @media (min-width: $screen-md) {
+    font-size: 30px;
+    line-height: 35px;
+  }
+}
+
+.variantH5 {
+  font-weight: 400;
+  font-size: 23px;
+  line-height: 27px;
+
+  @media (min-width: $screen-md) {
+    font-size: 26px;
+    line-height: 30px;
+  }
+}
+
+.variantH6 {
+  font-weight: 400;
+  font-size: 23px;
+  line-height: 27px;
+}
+
+//weights
+
+//weights
+.weight100 {
+  font-weight: 100;
+}
+
+.weight200 {
+  font-weight: 200;
+}
+
+.weight300 {
+  font-weight: 300;
+}
+
+.weight400 {
+  font-weight: 400;
+}
+
+.weight500 {
+  font-weight: 500;
+}
+
+.weight600 {
+  font-weight: 600;
+}
+
+.weight700, .weightBold {
+  font-weight: 700;
+}
+
+.weight900 {
+  font-weight: 800;
+}

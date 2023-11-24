@@ -1,0 +1,7 @@
+.noHero{
+  padding-top: 50px;
+
+  @media (min-width: $narrow-breakpoint) {
+    padding-top: 115px;
+  }
+}

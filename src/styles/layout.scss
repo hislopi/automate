@@ -1,0 +1,57 @@
+@import "variables/css/colours";
+@import "reset";
+@import "fonts";
+
+html,
+body {
+  font-family: $body-font;
+  font-size: 16px;
+  line-height: 19px;
+}
+* {
+  box-sizing: border-box;
+}
+
+
+body.modal-open{
+  overflow: hidden;
+}
+
+strong, b{
+  font-weight: bold;
+}
+
+i{
+  font-style: italic;
+}
+
+
+ul,ol{
+  li{
+    display: list-item;
+    margin-bottom: 10px ;
+  }
+}
+ul{
+  display: block;
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  padding-inline-start: 40px;
+}
+
+ol{
+  display: block;
+  list-style-type: decimal;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  padding-inline-start: 40px;
+}
+
+img{
+  max-width: 100%;
+}

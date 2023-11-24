@@ -1,0 +1,39 @@
+.splitIntroCon {
+  position: relative;
+}
+
+.splitIntroGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 25px;
+
+  @media (min-width: $screen-md) {
+    grid-template-columns: 40% 60%;
+  }
+
+
+}
+
+
+.bgShape {
+  position: absolute;
+  left: 0;
+  transform: translateX(-55%);
+  top: -62px;
+}
+
+
+.serviceIcons {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+
+  img {
+    max-width: 35px;
+
+    @media (min-width: $screen-md) {
+      max-width: 46px;
+    }
+  }
+}

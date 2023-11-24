@@ -1,0 +1,95 @@
+.modal-container {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: flex-end;
+  visibility: hidden;
+  transition: visibility .5s, opacity .5s, backdrop-filter .5s;
+  opacity: 0;
+
+  @media (min-width: 701px) {
+    backdrop-filter: blur(0);
+  }
+
+  &.isOpen {
+    opacity: 1;
+    visibility: visible;
+    @media (min-width: 701px) {
+      backdrop-filter: blur(5px);
+    }
+  }
+}
+
+.modal-overlay {
+  position: absolute;
+  inset: 0;
+}
+
+.modal {
+  z-index: 2;
+  position: relative;
+  padding: 20px;
+  width: 1069px;
+  height: 100vh;
+  background-color: white;
+  max-width: 100%;
+  transition: transform .5s;
+  transform: translateX(100%);
+  display: flex;
+  flex-direction: column;
+
+  .closeBtn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    width: 43px;
+    height: 43px;
+
+    svg{
+      width: 100%;
+      height: 100%;
+    }
+    svg path {
+      fill: var(--color-brand-black)
+    }
+  }
+
+  .inner {
+    flex: 1;
+    padding-top: 60px;
+    display: flex;
+    flex-direction: column;
+
+    &.scroll &{
+      overflow: scroll;
+    }
+  }
+
+  .isOpen & {
+    transform: translateX(0%);
+  }
+
+  @media (min-width: 701px) {
+    box-shadow: -15px 2px 20px 5px rgba(0, 0, 0, .09);
+  }
+}
+
+@keyframes inRight {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes blurIn {
+  0% {
+    backdrop-filter: blur(0);
+  }
+  100% {
+    backdrop-filter: blur(5px);
+  }
+}

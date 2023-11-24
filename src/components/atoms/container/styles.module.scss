@@ -1,0 +1,41 @@
+.container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 100%;
+}
+
+.paddingXs {
+  padding: 0 var(--gutter-sm);
+}
+
+.paddingSm {
+  padding: 0 var(--gutter-sm);
+
+  @media (min-width: $screen-md) {
+    padding: 0 var(--gutter-md);
+  }
+}
+
+.paddingMd {
+  padding: 0 var(--gutter-md);
+
+  @media (min-width: $screen-md) {
+    padding: 0 var(--gutter-lg);
+  }
+}
+
+.sizeXs {
+  max-width: 630px;
+}
+
+.sizeSm {
+  max-width: 768px;
+}
+
+.sizeMd {
+  max-width: 1280px;
+}
+
+.sizeLg {
+  max-width: 1282px;
+}

@@ -1,0 +1,66 @@
+.link {
+  --link-color: inherit;
+  //--link-hover-color: var(--color-brand-green);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: none;
+  text-align: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  transition: all 0.25s;
+  cursor: pointer;
+  color: var(--link-color);
+
+  &.light {
+    --link-color: var(--color-brand-white);
+    //--link-hover-color: var(--color-brand-green);
+  }
+
+  &.colored{
+    --link-color: var(--color-brand-green);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  &:hover,
+  &:active,
+  &:focus,
+  &:visited {
+    text-decoration: none;
+
+    &.underlined {
+      text-decoration: underline;
+    }
+
+    //color: var(--link-hover-color);
+  }
+
+  &.underlined {
+    text-decoration: underline;
+  }
+
+  i,
+  svg {
+    color: var(--link-color);
+  }
+
+  svg:first-child:not(:last-child),
+  i:first-child:not(:last-child) {
+    margin-right: 10px;
+  }
+
+  svg:last-child:not(:first-child),
+  i:last-child:not(:first-child) {
+    margin-left: 10px;
+  }
+}

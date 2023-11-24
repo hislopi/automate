@@ -1,0 +1,148 @@
+.gallery {
+  position: relative;
+  background: #F5F5F5;
+}
+
+
+.slider {
+
+  .swiperPrev, .swiperNext {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    &[class*='disabled'] {
+      display: none;
+    }
+  }
+
+  .slide {
+    position: relative;
+    height: 438px;
+
+    @media (min-width: $screen-md) {
+      width: 650px;
+      height: 415px;
+    }
+
+    .gImage {
+      width: 100%;
+      height: 100%;
+    }
+
+
+    .gImage {
+      &:before {
+        content: '';
+        background: #000000;
+
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        transition: all .5s;
+          opacity: 0;
+      }
+    }
+
+    .content {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      z-index: 2;
+      color: var(--color-brand-white);
+      width: 472px;
+      transition: all .25s;
+      max-width: 100%;
+      transform: translateY(100%);
+
+      *{
+        user-select: none ;
+      }
+
+      @media (min-width: $screen-md) {
+        bottom: 40px;
+        left: 40px;
+      }
+
+      .title-wrap {
+        transform: translateY(-40px);
+        transition: all .25s;
+        position: relative;
+        height: 35px;
+
+        .title {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          text-shadow: 1px 1px 7px rgba(0, 0, 0,.5);
+        }
+      }
+
+      .caption {
+        transition: all .25s;
+        opacity: 0;
+      }
+
+    }
+
+    @media (min-width: $screen-md) {
+      &:hover {
+        .content {
+          transform: translateY(0%);
+        }
+
+        .title-wrap {
+          transform: translateY(-10px);
+        }
+
+        .gImage {
+          &:before {
+            opacity: 0.7;
+          }
+        }
+
+        .caption {
+          opacity: 1;
+        }
+      }
+    }
+
+
+    &:active {
+      .content {
+        transform: translateY(0%);
+      }
+
+      .title-wrap {
+        transform: translateY(-10px);
+      }
+
+      .gImage {
+        &:before {
+          opacity: 0.7;
+        }
+      }
+
+      .caption {
+        opacity: 1;
+        padding-bottom: 10px;
+      }
+    }
+
+  }
+
+  .swiperPrev {
+    left: 20px;
+    @media (min-width: $screen-md) {
+      left: 0;
+    }
+  }
+
+  .swiperNext {
+    right: 20px;
+
+    @media (min-width: $screen-md) {
+      right: 0;
+    }
+  }
+}

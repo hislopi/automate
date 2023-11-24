@@ -1,0 +1,23 @@
+.banner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.bannerInner {
+  position: relative;
+}
+
+.bannerBg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-color: var(--color-brand-green);
+
+  [data-gatsby-image-wrapper] {
+    width: 100%;
+    height: 100%;
+  }
+}

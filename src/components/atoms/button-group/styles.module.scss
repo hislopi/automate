@@ -1,0 +1,11 @@
+.button-group {
+  display: inline-flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  @media (min-width: $screen-sm) {
+    gap: 20px;
+    justify-content: flex-start;
+  }
+}

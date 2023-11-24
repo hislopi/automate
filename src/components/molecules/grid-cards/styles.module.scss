@@ -1,0 +1,55 @@
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 26px;
+
+  @media (min-width: $screen-xs) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.card {
+  padding: 33px 38px;
+  height: 356px;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+overflow: hidden;
+
+  .overlay {
+    background: linear-gradient(180deg,rgba(0, 0, 0, 0),black);
+    content: "";
+    display: block;
+    inset: 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    top: 41%;
+  }
+
+  .bg-shape {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    svg{
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+
+  .content {
+    position: relative;
+    color: var(--color-brand-white);
+    z-index: 3;
+
+    p:first-child {
+      margin-top: 0;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

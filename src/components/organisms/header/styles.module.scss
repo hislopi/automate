@@ -1,0 +1,368 @@
+
+
+.header {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  transition: all 0.25s;
+
+  @media (max-width: $mobile-breakpoint) {
+    background-color: rgba(255, 255, 255, 1);
+
+    .logo {
+      animation: fadeIn .25s both;
+    }
+  }
+
+  &.short {
+    background-color: rgba(255, 255, 255, 1);
+
+    @media (max-width: $mobile-breakpoint) {
+      .logo {
+        animation: fadeOut .25s both;
+      }
+
+      .inlineLogo {
+        display: block;
+        animation: fadeIn .25s both;
+      }
+    }
+  }
+}
+
+.inner {
+  display: flex;
+  justify-content: space-between;
+
+  &, .navCtaWrap {
+    height: 50px;
+
+    @media (min-width: $mobile-breakpoint) {
+      height: auto;
+    }
+  }
+}
+
+.navCtaCol {
+  flex: 1;
+
+
+  header {
+    color: var(--color-brand-black);
+  }
+
+  @media (min-width: $mobile-breakpoint) {
+    header:not(.short).has-hero & {
+      color: var(--color-brand-white);
+    }
+
+    .short & {
+      color: var(--color-brand-black);
+    }
+  }
+}
+
+.navCtaWrap {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.logoWrap {
+  flex: 0 0 170px;
+  margin-right: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transition: flex .25s;
+
+  @media (min-width: $mobile-breakpoint) {
+    flex: 0 0 70px;
+  }
+
+
+  @media (min-width: $narrow-breakpoint) {
+    flex: 0 0 170px;
+  }
+
+  .short & {
+    @media (min-width: $narrow-breakpoint) {
+      flex: 0 0 100px;
+    }
+  }
+
+  .logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    @media (max-width: $narrow-breakpoint) {
+      width: 65px;
+      height: 67px;
+    }
+  }
+
+  .inlineLogo {
+    display: none;
+
+  }
+}
+
+.navCol {
+  flex: 1;
+  display: none;
+  @media (min-width: $mobile-breakpoint) {
+    display: block;
+  }
+}
+
+.nav {
+  display: flex;
+  gap: 20px;
+
+  .navItem {
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 700;
+    white-space: nowrap;
+    position: relative;
+
+    &.hasDropdown {
+
+    }
+  }
+}
+
+.navItemWrap {
+  position: relative;
+}
+
+
+.navDropdown {
+  padding-top: 16px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10%);
+  transition: all .25s;
+  position: absolute;
+  top: 100%;
+  left: 0;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .inner {
+    position: relative;
+    padding: 20px;
+    background: #FFFFFF;
+
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+
+    &:before {
+      content: '';
+      width: 0;
+      height: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+
+      border-bottom: 5px solid white;
+      position: absolute;
+      bottom: 100%;
+      left: 17px;
+    }
+
+    a {
+      color: #000000;
+      white-space: nowrap;
+
+      span {
+        text-align: left;
+        width: 100%;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 15px;
+      }
+    }
+  }
+}
+
+
+.buttons {
+  padding: 5px 0;
+  display: flex;
+  align-items: center;
+
+  .sep {
+    border-left: 1px solid var(--color-brand-light-grey-2);
+    height: 19px;
+    margin: 0 20px;
+    display: none;
+
+    @media (min-width: 500px) {
+      display: block;
+    }
+
+    .short & {
+      border-left: 1px solid var(--color-brand-light-grey);
+    }
+  }
+
+  .social {
+    color: var(--color-brand-green);
+    display: none;
+
+    @media (min-width: 500px) {
+      display: block;
+    }
+  }
+
+  .phoneNumberBtn {
+    span {
+      display: none;
+      @media (min-width: $mobile-breakpoint) {
+        display: inline;
+      }
+    }
+  }
+
+  .mailBtn {
+    @media (min-width: $mobile-breakpoint) {
+      display: none;
+    }
+  }
+
+  .ctaBtn {
+    display: none;
+    @media (min-width: $mobile-breakpoint) {
+      display: inline;
+    }
+  }
+}
+
+.mobileMenu {
+  display: flex;
+  height: 25px;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 10px;
+
+  i {
+    height: 3px;
+    width: 32px;
+    border-radius: 3px;
+    display: block;
+    background-color: var(--color-brand-black);
+  }
+
+  @media (min-width: $mobile-breakpoint) {
+    display: none;
+  }
+
+
+}
+
+.mobileMenuNav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+
+  a {
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  > a {
+    font-weight: bold;
+  }
+
+  .mobileMenuNavSub {
+    margin-left: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .socialMobile {
+    color: var(--color-brand-green);
+
+    > div {
+      margin-bottom: 10px;
+    }
+  }
+
+  .isoImage {
+    display: flex;
+    gap: 15px;
+
+    a > div {
+      width: 92px;
+    }
+  }
+}
+
+.closeBtn {
+  position: absolute;
+  width: 34px;
+  height: 34px;
+  top: 8px;
+  right: 8px;
+
+  i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+    height: 3px;
+    width: 100%;
+    background: black;
+    transform-origin: center;
+  }
+
+  i:nth-child(1) {
+    transform: translate(-50%) rotate(-45deg);
+  }
+
+  i:nth-child(2) {
+    transform: translate(-50%) rotate(45deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-100%);
+  }
+
+  to {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0%);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0%);
+  }
+
+  to {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-100%);
+  }
+}

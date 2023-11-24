@@ -1,0 +1,9 @@
+.contactFormCon{
+  background-color: var(--color-brand-light-grey-2);
+
+  margin-top: 30px;
+  @media (min-width: $screen-md) {
+    margin-top: auto;
+    background-color: transparent;
+  }
+}
