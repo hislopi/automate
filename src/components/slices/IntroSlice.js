@@ -7,6 +7,7 @@ import { graphql } from "gatsby"
 export const IntroSlice = ({ slice }) => {
   const { primary } = slice
   const { title, content, spacing } = primary
+    console.log({spacing})
   return (
     <>
       <Spacer y={spacing || "lg"} type="margin" topOnly />

@@ -1,7 +1,7 @@
 import React from "react"
 import * as styles from "./styles.module.scss"
 import { Container } from "@components/atoms"
-import Spacer from "@components/atoms/spacer"
+//import Spacer from "@components/atoms/spacer"
 import { FadeInSAL } from "@components/utils/animate"
 
 import DoorSVG from "@assets/images/services/door.svg"
@@ -45,7 +45,7 @@ export const SplitIntro = ({ title, addServiceIcons, children, ...props }) => {
           />
         </svg>
       </div>
-      <Spacer y="lg">
+
         <Container size="lg">
           <div className={styles.splitIntroGrid}>
             {title && (
@@ -56,7 +56,7 @@ export const SplitIntro = ({ title, addServiceIcons, children, ...props }) => {
             {children && <div>{children}</div>}
           </div>
         </Container>
-      </Spacer>
+
     </div>
   )
 }
